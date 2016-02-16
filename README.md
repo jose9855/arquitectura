@@ -1,0 +1,2 @@
+# arquitectura
+repositorio arquitectura computadores 
