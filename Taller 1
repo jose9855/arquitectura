@@ -52,13 +52,13 @@ n=-12,
 a=-11,
 b=-14.
 
-	Ejemplo: recuerde que comenti una equivocación grave con respecto a 
+	Ejemplo: recuerde que me confundi con respecto a 
 	inicialización de una variable negativa, enmiendo mi error asi que les dejo
 	un ejemplo de como se inializa una variable negativa.
 	si tengo f=-10 entonces, en lenguaje de bajo nivel 
 	add %go, -10, %l2
 	or %g0, %l2, %O_1 y lo guardo como un porcentaje de salida ya sea O_0,
-	lamento equivarme, tratare de que no vuelva a suceder y si llega a suceder de nuevo,
+	lamento equivocarme, tratare de que no vuelva a suceder y si llega a suceder de nuevo,
 	corregire rápidamente. el leguaje de máquina se hace de la manera como la veniamos trabajando
 	Recuerden que SPark maneja solo 4 tipos de registro tipo i,l , o y g, de entrada, locales, salida y globales.
 
