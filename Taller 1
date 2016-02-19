@@ -11,6 +11,9 @@ RST-----|		   |_______Dout
 		|		   |
 CLK-----|>		   |
 		|__________|
+Respecto a este punto queda por fuera del taller ya que algunos dicen no haber trabajo
+con VHDL, les dare algunos ejemplos para que se asocien al lenguaje como tal.
+
 
 2. Escriba los 4 principios de diseño de hardware aprendidos en clase.
 
@@ -43,6 +46,21 @@ int main(){
 	w=(p+40)+(x-z);
 	return 0; 
 }
+
+6. Inicializar las siguientes variables negativas usando OR.
+n=-12,
+a=-11,
+b=-14.
+
+	Ejemplo: recuerde que comenti una equivocación grave con respecto a 
+	inicialización de una variable negativa, enmiendo mi error asi que les dejo
+	un ejemplo de como se inializa una variable negativa.
+	si tengo f=-10 entonces, en lenguaje de bajo nivel 
+	add %go, -10, %l2
+	or %g0, %l2, %O_1 y lo guardo como un porcentaje de salida ya sea O_0,
+	lamento equivarme, tratare de que no vuelva a suceder y si llega a suceder de nuevo,
+	corregire rápidamente. el leguaje de máquina se hace de la manera como la veniamos trabajando
+	Recuerden que SPark maneja solo 4 tipos de registro tipo i,l , o y g, de entrada, locales, salida y globales.
 
 
 
