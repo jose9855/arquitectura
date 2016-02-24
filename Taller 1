@@ -1,3 +1,7 @@
+Nombre. Jose Feiver Angarita Monsalve
+Codigo. 1088261030
+
+
 Ejercicio 1 
 
 Este taller consiste en mejorar las habilidades de los conceptos aprendidos en clase.
@@ -17,6 +21,11 @@ con VHDL, les dare algunos ejemplos para que se asocien al lenguaje como tal.
 
 2. Escriba los 4 principios de diseño de hardware aprendidos en clase.
 
+ 1) La simplicidad favorece la regularidad
+ 2) Entre más pequeño más rapido
+ 3) Hacer el caso común más rapido
+ 4) Buenos diseños requieren grandes compromisos
+
 3. Convertir a instrucciones de bajo nivel.
 
 int x=0; 
@@ -27,9 +36,34 @@ y=x+3;
 z=z+3;
 x=(x-z)+(3+y);
 
+.SOLUCIÓN 
+
+	or %g0,0,%l1;
+	or %g0,8,%l2;
+	or %g0,1,%l3;
+
+	add %l1,3,%l2;
+	add %l3,3,%l3;
+	sub %l1,%l3,%l4;
+	add %l2,3,%l5;
+	add %l4,%l5,%l0;
+	
 4. Usar el ld, y st.
 a[4]= a[2]+x;
 y[0] = y[40]+13;
+
+.SOLUCIÓN
+	a[4]= a[2]+x;
+	
+	ld %l1,(8),%l3;
+	add %l3,%l2,%l4;
+	st %l4,%l3,(16);
+
+	y[0] = y[40]+13;
+		
+	ld %l1,(160),%l2;
+	add %l2,13,%l3;
+	st %l3,%l1,0;
 
 5. Convertir a lenguaje de maquina.
 a.
@@ -47,13 +81,49 @@ int main(){
 	return 0; 
 }
 
+.SOLUCIÓN
+	a. 
+
+	MAIN
+	0x0000 | add %g0,3,%l1;		(1)
+	0x0004 | add %g0,2,%l2;		(2)
+	0x0008 | add %l1,3,%o0;		(3)
+	0x000c | add %g0,%l3,%o0;	(4)
+
+
+	(1) 10 10001 000000 00000 1 00000000 0011
+	(2) 10 10010 000000 00000 1 00000000 0010
+	(3) 10 10011 000000 10001 1 00000000 0011
+	(4) 10 01000 000000 00000 0 000000010011
+
+	b. 
+	
+	MAIN
+	0x0000 | add %g0,3,%l0;		(1)
+	0x0004 | add %g0,1,%l1;		(2)
+	0x0008 | add %g0,4,%l2;		(3)
+	0x000c | add %g0,0,%l3;		(4)
+	0x0010 | add %l0,40,%l4;	(5)
+	0x0014 | sub %l1,%l2,%l5;	(6)
+	0x0018 | add %l4,%l5,%l6;	(7)
+	0x001c | add %g0,%l6,%o0;	(8)
+
+	(1) 10 10000 000000 00000 1 00000000 0011
+	(2) 10 10001 000000 00000 1 00000000 0001
+	(3) 10 10010 000000 00000 1 00000000 0100
+	(4) 10 10011 000000 00000 1 00000000 0000
+	(5) 10 10100 000000 10000 1 000000101000
+	(6) 10 10101 000100 10001 0 000000100010
+	(7) 10 10110 000000 10100 0 000000010101
+	(8) 10 01000 000000 00000 0 000000010110
+
 6. Inicializar las siguientes variables negativas usando OR.
 n=-12,
 a=-11,
 b=-14.
 
+.SOLUCIÓN
 
-
-
-
-
+	or %g0,-12,%l0
+	or %g0,-11,%l1
+	or %g0,-14,%l2
