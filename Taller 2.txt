@@ -20,6 +20,10 @@ SOLUCIÓN.
 
 * lenguaje bajo nivel
 
+p -> %l0
+h -> %l1
+b -> %l2
+
 0x0000 | or %g0,3,%l0
 0x0004 | or %g0,0,%l1
 0x0008 | or %g0,1197,%l2
