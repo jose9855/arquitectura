@@ -1,12 +1,7 @@
-Nombre. Jose Feiver Angarita Monsalve
+﻿Nombre. Jose Feiver Angarita Monsalve
 Codigo. 1088261030
 
 TALLER 2 
-
-%i0,%i7 r[24],r[31];
-%l0,%l7 r[16],r[23];
-%o0,%o7 r[8],r[15];
-%g0,%g7 r[0],r[7]; >> %g0 = 0
 
 * pasar a lenguaje bajo nivel >> lenguaje maquina >> hexadecimal
 
